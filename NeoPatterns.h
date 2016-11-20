@@ -70,7 +70,7 @@ class NeoPatterns : public Adafruit_NeoPixel
                 Index = 0;
                 if (OnComplete != NULL)
                 {
-                    OnComplete(); // call the comlpetion callback
+                    OnComplete(); // call the completion callback
                 }
             }
         }
@@ -82,7 +82,7 @@ class NeoPatterns : public Adafruit_NeoPixel
                 Index = TotalSteps-1;
                 if (OnComplete != NULL)
                 {
-                    OnComplete(); // call the comlpetion callback
+                    OnComplete(); // call the completion callback
                 }
             }
         }
