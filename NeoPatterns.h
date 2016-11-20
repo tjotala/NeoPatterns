@@ -289,6 +289,7 @@ class NeoPatterns : public Adafruit_NeoPixel
     }
 };
 
+#ifdef DEMO
 void Ring1Complete();
 void Ring2Complete();
 void StickComplete();
@@ -401,3 +402,4 @@ void StickComplete()
     // Random color change for next scan
     Stick.Color1 = Stick.Wheel(random(255));
 }
+#endif // #ifdef DEMO
