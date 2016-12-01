@@ -97,6 +97,11 @@ public:
         return ActivePattern != NULL;
     }
 
+    bool IsActive(const NeoPattern* pattern) const
+    {
+        return ActivePattern == pattern;
+    }
+
     void Start(NeoPattern* pattern)
     {
         ActivePattern = pattern;
@@ -243,6 +248,20 @@ public:
         {
             Pixels.setPixelColor(i, (i == Index || i == TotalSteps - Index) ? Color1 : Pixels.DimColor(Pixels.getPixelColor(i)));
         }
+    }
+};
+
+class Pulsar : public NeoPattern
+{
+public:
+    Pulsar(NeoPatterns& pixels, millis_t interval, color_t color1, color_t color2) :
+      NeoPattern(pixels, interval, color1, color2, 2)
+    {
+    }
+
+    virtual void Update()
+    { 
+        Pixels.ColorSet(Index == 0 ? Color1 : Color2);
     }
 };
 
